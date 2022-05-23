@@ -14,7 +14,18 @@ class TicTacToeGame {
           ? PLAYER_TWO_SYMBOL
           : PLAYER_ONE_SYMBOL;
     }
+    this.updateBoard();
     console.log(this.board);
+  }
+
+  updateBoard() {
+    let gameBoard = document.getElementById("gameBoard");
+    let squareElements = gameBoard.childNodes;
+    squareElements.forEach((element, index) => {
+      if (element.innerText != this.board[index]) {
+        element.innerText = this.board[index];
+      }
+    });
   }
 
   drawBoard() {
